@@ -28,5 +28,22 @@ export function createApp() {
     res.status(500).json({ message: "Internal server error." });
   });
 
+  app.use(
+  cors({
+    origin: [
+      "https://afshin-portfolio-client.vercel.app",
+    ],
+  })
+);
+
+app.use(
+  cors({
+    origin: [
+      "https://afshin-portfolio-client.vercel.app",
+      "http://localhost:5173",
+    ],
+  })
+);
+
   return app;
 }
